@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/app_bg"
+    tools:context=".MapsActivity">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/cute"/>
+
+
+
+    <EditText
+        android:id="@+id/et_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Source Location"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:background="@android:drawable/editbox_background"/>
+
+
+    <EditText
+        android:id="@+id/et_destination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Destination Location"
+        android:padding="12dp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/editbox_background"/>
+
+    <Button
+        android:id="@+id/btn_track"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Display Track"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:paddingLeft="50dp"
+        android:drawableLeft="@drawable/googlemaps"
+        android:drawableRight="@drawable/googlemaps"
+        android:paddingRight="50dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/buttons"
+        />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:paddingLeft="10dp"
+        android:drawableTint="@color/cardview_light_background"
+        android:drawableStart="@drawable/left_arrow"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        android:background="@drawable/buttons"/>
+
+
+
+</LinearLayout>

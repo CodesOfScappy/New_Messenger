@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "159504000105",
+    "firebase_url": "https://messenger-e0f9a-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "messenger-e0f9a",
+    "storage_bucket": "messenger-e0f9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159504000105:android:b0095e8dbc53b2bc36eef8",
+        "android_client_info": {
+          "package_name": "com.example.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159504000105-sc35mevduel39k3ljkau1vbmg10ikisa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.messenger",
+            "certificate_hash": "1c1beb888cbb628e0efe44f2c3a5c1549ee63549"
+          }
+        },
+        {
+          "client_id": "159504000105-a5gns4f4o9chqbersa037k5ge9779ft0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX0ZP2-T60k6mdLLsmpa8Zknn1lECcBkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159504000105-a5gns4f4o9chqbersa037k5ge9779ft0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
