@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Messenger">
         <activity
+            android:name=".VerifyOTPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PhoneLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".GroupChatActivity"
             android:exported="false" />
         <activity

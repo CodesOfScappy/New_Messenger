@@ -10,7 +10,7 @@
     </corners>
 
     <stroke
-        android:color="@color/ColorPrimaryDark"
+        android:color="@color/black"
         android:width="2dp">
 
     </stroke>

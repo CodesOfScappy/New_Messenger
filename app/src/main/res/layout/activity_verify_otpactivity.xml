@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg"
+    tools:context=".VerifyOTPActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/cute"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Verification"
+                android:selectAllOnFocus="false"
+                android:linksClickable="false"
+                android:autoLink="all"
+                android:textSize="37sp"
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:fontFamily="serif-monospace"
+                android:includeFontPadding="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We send you an SMS Code after Verification"
+                android:textColor="?android:attr/colorActivatedHighlight"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="on your Phone number "
+                android:textStyle="italic|bold"
+                android:textSize="15sp"
+                android:textColor="?android:attr/colorFocusedHighlight"
+                 />
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:outlineSpotShadowColor="@color/black"
+                android:outlineAmbientShadowColor="@color/cardview_dark_background" >
+
+
+
+
+                    <EditText
+                        android:id="@+id/otp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@android:color/transparent"
+                        android:hint="Enter OTP"
+                        android:padding="12dp"
+                        android:textColorHint="#7b7b7b"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.3"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:inputType="number"
+                        android:importantForAutofill="no" />
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <ImageButton
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="16dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_baseline_navigate_next_24"
+                android:background="@drawable/circle_back"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="2dp"
+                android:text="Submit"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:letterSpacing="0.06" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don´t received OTP? "
+                    android:textColor="?attr/actionModeSplitBackground"
+                    android:letterSpacing="0.06"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:includeFontPadding="false"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:id="@+id/resend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="resend"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button2"
+                android:textColor="@color/white"
+                android:includeFontPadding="false"
+                android:fontFamily="serif-monospace"
+                android:drawableRight="@drawable/ic_links"
+                android:drawableLeft="@drawable/ic_rechts"
+                android:textStyle="bold" />
+
+            <com.tuyenmonkey.mkloader.MKLoader
+                android:id="@+id/loader"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                app:mk_type="Sharingan"
+                app:mk_color="@android:color/holo_orange_light"/>
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
