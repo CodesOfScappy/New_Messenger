@@ -1,8 +1,5 @@
 package com.example.messenger;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -56,6 +55,15 @@ public class LoginActivity extends AppCompatActivity
             }
         });
 
+        PhoneLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                   Intent phoneLoginIntent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
+                   startActivity(phoneLoginIntent);
+            }
+        });
+
     }
 
 
@@ -79,6 +87,8 @@ public class LoginActivity extends AppCompatActivity
              loadingBar.setMessage("Please wait.....");
              loadingBar.setCanceledOnTouchOutside(true);
              loadingBar.show();
+
+
              mAuth.signInWithEmailAndPassword(email, password)
                      .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                          @Override
