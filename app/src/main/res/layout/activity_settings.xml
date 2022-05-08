@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_03"
+    android:background="@drawable/app_bg"
     tools:context=".SettingsActivity">
 
 
@@ -52,7 +52,7 @@
         android:drawableStart="@drawable/edit_status"
         android:textColor="@color/black"
         android:background="@drawable/textbox"
-        android:hint="@string/i_am_online"
+        android:hint="I am Online..."
         android:textStyle="bold"
         />
 
@@ -74,4 +74,4 @@
 
 
 
-    </RelativeLayout>
+</RelativeLayout>
