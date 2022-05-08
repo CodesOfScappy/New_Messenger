@@ -61,5 +61,8 @@ dependencies {
     implementation 'com.github.krokyze:ucropnedit:2.2.6-2'
     //Image Downloader Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
+    // Image-Cropper API
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
+
 
 }

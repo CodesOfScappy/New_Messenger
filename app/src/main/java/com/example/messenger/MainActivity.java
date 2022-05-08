@@ -84,18 +84,22 @@ public class MainActivity extends AppCompatActivity
 
     private void VerifyUserExistance()
     {
+        //( Überprüfung ob User bereits Registriet ist
         String currentUserID = mAuth.getCurrentUser().getUid();
 
         RootRef.child("Users").child(currentUserID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot)
             {
+                // wenn User bereits Registrieert direkt zur Main senden
                 if ((dataSnapshot.child("name").exists()))
                 {
+                    // Begrüst User mit anzeige unten <Wilcome>
                     Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
+                    // Wenn User neu zur Settigs senden
                     SendUserToSettingsActivity();
                 }
             }
@@ -108,7 +112,7 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-
+      // Anzeige des Options-Menü in der TabViewBar
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
@@ -120,7 +124,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
+     // Anweisungen was geschehen soll wenn User auf eine Auswahl klickt
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -128,25 +132,30 @@ public class MainActivity extends AppCompatActivity
 
         if (item.getItemId() == R.id.main_logout_option)
         {
+            // Logt User aus der App aus
             mAuth.signOut();
             SendUserToLoginActivity();
         }
         if (item.getItemId() == R.id.main_settings_option)
         {
+            // Sendet User zu den Settings
             SendUserToSettingsActivity();
         }
 
         if (item.getItemId() == R.id.main_goole_maps_option)
         {
+            // Sendet User zu GoogleMaps
             Intent mapsIntent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(mapsIntent);
         }
         if (item.getItemId() == R.id.main_create_group_option)
         {
+            // Erstellt eine neuen GruppenChat namen
             RequestNewGroup();
         }
         if (item.getItemId() == R.id.main_find_friends_option)
         {
+            SendUserToFindFriendsActivity();
 
         }
 
@@ -209,6 +218,7 @@ public class MainActivity extends AppCompatActivity
 
     private void SendUserToLoginActivity()
     {
+        // Sendet User zu MainActivity
         Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
         loginIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(loginIntent);
@@ -216,10 +226,17 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void SendUserToSettingsActivity()
-    {
+    {    // Sendet User zu SettingsActivity
         Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
         settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(settingsIntent);
         finish();
+    }
+    private void SendUserToFindFriendsActivity()
+    {
+        // Sendet User zu MainActivity
+        Intent findFriendsIntent = new Intent(MainActivity.this, FindFriendsActivity.class);
+        startActivity(findFriendsIntent);
+
     }
 }
