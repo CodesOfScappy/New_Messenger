@@ -1,5 +1,6 @@
 package com.example.messenger;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import java.util.UUID;
 public class CropperActivity extends AppCompatActivity
 {
 
+private ProgressDialog loadingBar;
 
    String result;
    Uri fileUri;
@@ -26,7 +28,10 @@ public class CropperActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cropper);
 
+
+
         readIntent();
+
 
         String dest_uri = new  StringBuilder(UUID.randomUUID().toString()).append(".jpg").toString();
 
@@ -44,6 +49,8 @@ public class CropperActivity extends AppCompatActivity
                 .start(CropperActivity.this);
 
     }
+
+
 
     private void readIntent()
     {
@@ -63,12 +70,15 @@ public class CropperActivity extends AppCompatActivity
         if(resultCode==RESULT_OK && requestCode==UCrop.REQUEST_CROP){
 
 
+
+
             final Uri resultUri = UCrop.getOutput(data);
             Intent returnIntent = new Intent();
             returnIntent.putExtra("RESULT", resultUri+"");
             setResult(-1, returnIntent);
             finish();
         }
+
         else if (resultCode==UCrop.RESULT_ERROR)
         {
             final Throwable cropError = UCrop.getError(data);
