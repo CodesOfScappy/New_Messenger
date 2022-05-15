@@ -65,7 +65,7 @@
             android:id="@+id/send_message_button"
             android:layout_width="48dp"
             android:layout_height="47dp"
-            android:background="@color/white"
+            android:background="@android:color/background_light"
             android:layout_marginStart="2dp"
             android:src="@drawable/arrow4"
              />

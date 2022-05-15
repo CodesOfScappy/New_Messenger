@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -49,6 +50,8 @@ public class SettingsActivity extends AppCompatActivity {
     private static final int GalleryPick = 1;
     private StorageReference userProfileImageRef;
     private ProgressDialog loadingBar;
+
+    private Toolbar SettingsToolbar;
 
 
     @Override
@@ -119,6 +122,13 @@ public class SettingsActivity extends AppCompatActivity {
         userProfileImage = (CircleImageView) findViewById(R.id.set_profile_image);
         backArrow = (ImageView) findViewById(R.id.back_arrow);
         loadingBar = new ProgressDialog(this);
+
+        SettingsToolbar = (Toolbar) findViewById(R.id.settings_toolbar);
+        setSupportActionBar(SettingsToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Account Settings");
+
 
     }
 
@@ -221,11 +231,11 @@ public class SettingsActivity extends AppCompatActivity {
         else
         {
             // HashMap Datentabelle <Schlüsselpaare>
-            HashMap<String, String> profileMap = new HashMap<>();
+            HashMap<String, Object> profileMap = new HashMap<>();
                 profileMap.put("uid", currentUserID);
                 profileMap.put("name", setUserName);
                 profileMap.put("status", setStatus);
-            rootRef.child("Users").child(currentUserID).setValue(profileMap)
+            rootRef.child("Users").child(currentUserID).updateChildren(profileMap)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task)
